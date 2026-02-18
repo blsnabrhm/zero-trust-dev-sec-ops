@@ -17,7 +17,7 @@ spec:
       containers:
       - name: zero-trust-app
         # REPLACE with your actual Docker Hub username
-        image: YOUR_DOCKERHUB_USERNAME/zero-trust-app:latest 
+        image: ${{ secrets.DOCKERHUB_USERNAME }}/zero-trust-app:latest 
         ports:
         - containerPort: 8080
 ---
