@@ -1,0 +1,11 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sBlockRoot
+metadata:
+  name: block-root-pods
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+    # We only apply this to the default namespace so we don't break system pods
+    namespaces: ["default"]
